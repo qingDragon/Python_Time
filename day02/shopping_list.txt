@@ -1,0 +1,4 @@
+macbookpro 10000
+bike 2000
+apple 20
+iphone 5000
