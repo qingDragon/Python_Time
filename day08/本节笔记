@@ -1,0 +1,90 @@
+
+----------上节课回顾------------
+静态方法
+    与类无关，不能访问类里的任何属性和方法
+类方法
+    只能访问类变量
+属性@property
+    把一个方法变成一个静态属性，
+    flight.status
+    @status.setter
+    flight.status = 3
+    @status.delter
+    删除
+反射
+    getattr(obj,str)
+    setattr(obj,str,val)
+    hasattr(obj,str)
+    delattr(obj,str)
+
+
+
+
+
+动态导入模块——指导模块名的字符串形式，怎么导入
+
+
+__new__
+
+__call__
+    class Foo(object):
+        def __init__()
+            print("call")
+    Foo()()执行call方法
+__metaclass__ 用来定义这个类以怎样的形式来创建实例（__metaclass__ = MyType）
+
+异常处理
+
+try
+    ...
+except (ValueError,KeyError) as e
+
+except Exception as e: #放在异常处理最后面，未知异常
+else:#没发生异常，就执行
+finally：无论如何都执行
+
+
+自定义异常触发
+raise MyError
+
+
+断言
+assert type(obj.name) is str #断言正确程序往下走，错误结束，通常用在后面程序依赖前面的且后面的程序非常重要。
+
+socket
+    tcp/ip
+    udp
+
+
+    family address 地址簇
+        AF.INET  ipv4
+        AF.INET6
+        AF.UNIX
+
+    socket protocol type
+    sock.SOCK_STREAM  tcp/ip
+    socket.SOCK_DGRAM for udp
+
+
+    服务端
+    server = socket.socket(AF.INET,SOCK_STREAM)
+    server.bind(localhost.9999)
+    server.listen()
+
+    while True:#可以不断接受新的连接，但是同时只能服务一个，排队
+        conn,addr = server.accept() #阻塞
+        Whlie True:
+            print("new conn", addr)
+            data = conn.recv(1024) #官方建议不超过8192（8k） #recv默认是阻塞的，等客户端发
+            if not data: #防止客户端断开进入死循环
+                break
+            print(data)
+            conn.send(data.upper())
+
+            #客户端已断开，conn.recv收到的就是空数据，进入了死循环
+
+    客户端
+    client = socket.socket()
+    client.connect((127.0.0.1,9999))
+    client.send(data)
+    client.recv(dat)
