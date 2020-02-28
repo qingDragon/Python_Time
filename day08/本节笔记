@@ -89,3 +89,22 @@ socket
     client.send(data)
     client.recv(dat)
 
+
+    soket 粘包
+
+    ftp server
+    1、读文件名
+    2、检测文件是否存在
+    3、打开文件
+    4、获取文件大小
+    5、发送文件大小给客户端
+    6、等客户端确认
+    7、开始边读边发数据
+    8、发送md5
+
+
+
+    SocketServer
+        对socket 的封装，简化网络服务器，实现并发功能
+        
+
