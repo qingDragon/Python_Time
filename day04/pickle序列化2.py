@@ -1,6 +1,3 @@
-
-
-
 import pickle
 
 def sayhi(name):
@@ -13,4 +10,5 @@ info = {
 f = open("test.txt","wb")
 # f.write(pickle.dumps(info))
 pickle.dump(info,f) #完全等价于上面的语句
+
 f.close()
