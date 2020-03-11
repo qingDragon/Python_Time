@@ -1,7 +1,7 @@
 import socket
 
 client = socket.socket()
-client.connect(('localhost',9999))
+client.connect(('10.211.55.6',9998))
 
 while True:
     msg = input(">>:").strip() # 不能发空内容

@@ -1,0 +1,58 @@
+epoll 多路复用 底层通过linux上的libevent.so实现的
+gevent 底层也是通过libevent.so实现的 可以理解为gevent是一个更上层的封装
+
+twisted 异步网络框架 游戏开发后台可能用到 *
+
+ 书《毛泽东传》
+电影《亡命之徒》 《西部世界》
+
+RabbitMQ 消息队列，不能数据共享，只能收发数据
+
+python Queue 一个是线程queue ，不能跨进程
+                一个是进程queue，也只能用用于父进程与子进程间的交互，或者同一父进程下的多个子进程
+
+如果两个程序之间不同语言或者两台机器想通信，只能找中间代理，即RabbitMQ
+
+openstack 默认就用的rabbitmq
+
+Radis---数据共享
+比如说QQ和微信通信，需要一个中间商broker缓存，两者分别与中间上进行socket连接
+
+流行的缓存系统
+mongoDB 不需要配置直接持久化
+redis 用的比较多，半持久化，默认存在内存中
+memcache 只能存在内存中，不能持久化
+
+--------------redis------------------
+首先是单线程的，是通过epoll实现的高并发
+python操作要先安装模块redis
+    import redis
+
+    r = redis.Redis(host='127.0.0.1',port=6379)
+    r.set('name','yanzhuang')
+
+    print(r.get('name'))
+
+通过连接池连接
+
+redis支持：
+string操作
+hash操作
+list
+set
+sort set
+管道
+发布订阅
+
+
+巨流弊的应用--查看此时的在线用户有多少，用户数量庞大，用数据库的话效率 不高
+
+通过二进制位01表示用户状态
+
+
+
+MySQL
+
+
+rpc-remote proceure call 客户端发一条指令，服务器上执行返回给客户端
+
